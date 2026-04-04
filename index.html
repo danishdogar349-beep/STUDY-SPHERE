@@ -145,8 +145,23 @@ createSubject('Statistics',{book:'#',notes:'#',a1:'#',a2:'#',mid:'https://drive.
 createSubject('AI',{book:'#',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1TZqin-cbJVR10n-xya48_trUF64jXR1-/view?usp=drive_link',final:'https://drive.google.com/file/d/1j11KPXB_HWp3Hg1PY2huanR9OlvZzKAN/view?usp=drive_link'},16);
 </script>
 </div>
+  <!-- SEM 4 -->
+<div class="semester" id="sem4"> 
+<h2>Semester 4</h2>
+<div id="sem4data"></div>
+<script>
+document.getElementById('sem4data').innerHTML =
+createSubject('Islamiyat',{book:'#',notes:'#',a1:'#',a2:'#',mid:'#',final:'#'},17)+
+createSubject('Physics',{book:'#',notes:'#',a1:'#',a2:'#',mid:'#',final:'#'},18)+
+createSubject('Pak Study',{book:'#',notes:'#',a1:'#',a2:'#',mid:'#',final:'#'},19)+
+createSubject('Computer',{book:'#',notes:'#',a1:'#',a2:'#',mid:'#',final:'#'},20)+
+createSubject('Computer',{book:'#',notes:'#',a1:'#',a2:'#',mid:'#',final:'#'},21)+
+createSubject('Computer',{book:'#',notes:'#',a1:'#',a2:'#',mid:'#',final:'#'},22);
+</script>
+</div>
 
-<!-- SEM 4-8 AUTO NAMES -->
+
+<!-- SEM 5-8 AUTO NAMES -->
 <script>
 function gen(container,start){
  let html='';
@@ -156,7 +171,7 @@ function gen(container,start){
  document.getElementById(container).innerHTML=html;
 }
 </script>
-<div class="semester" id="sem4"><h2>Semester 4</h2><div id="s4"></div><script>gen('s4',20)</script></div>
+
 <div class="semester" id="sem5"><h2>Semester 5</h2><div id="s5"></div><script>gen('s5',30)</script></div>
 <div class="semester" id="sem6"><h2>Semester 6</h2><div id="s6"></div><script>gen('s6',40)</script></div>
 <div class="semester" id="sem7"><h2>Semester 7</h2><div id="s7"></div><script>gen('s7',50)</script></div>
