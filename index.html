@@ -3,64 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Study Sphere</title>
+<title>Study Sphere AI</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
-body{font-family:'Segoe UI';margin:0;background:linear-gradient(135deg,#1e3c72,#2a5298);color:white;}
-h1{text-align:center;padding:15px;}
-.container{width:95%;margin:auto;}
 
-/* ==================== NAVBAR STYLING ==================== */
-.navbar{display:flex;flex-wrap:wrap;justify-content:center;background:#204377;padding:10px;}
-.navbar button{
-  background:none;
-  border:none;
-  color:rgb(247, 247, 246);
-  font-weight:bold;
-  margin:5px 15px;
-  cursor:pointer;
-  padding:1px 5px;
-  border-radius:25px;
-  transition:all 0.3s ease;
-  font-size:16px;
+/* ================= BODY ================= */
+body{
+  font-family:'Segoe UI';
+  margin:0;
+  background: radial-gradient(circle at top,#0f2027,#203a43,#2c5364);
+  color:white;
+  overflow-x:hidden;
 }
 
-/* ==================== HOVER EFFECT - CURVED + BACKGROUND ==================== */
-.navbar button:hover{
-  color:#f2f5f5;
-  background-color:#f24bd1;
-  transform:rotate(-3deg) scale(1.1);
-  border-radius:50px;
+/* BACKGROUND CANVAS */
+#bgCanvas{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+
+/* ================= TITLE ================= */
+h1{
+  text-align:center;
+  padding:20px;
+  font-size:34px;
   letter-spacing:2px;
-  text-shadow:2px 2px 4px rgba(0,0,0,0.3);
-  box-shadow:0 5px 15px rgba(231,76,60,0.4);
+  text-transform:uppercase;
+  background: linear-gradient(90deg,#00f2ff,#ff00c8);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-/* ==================== EXISTING STYLES (UNCHANGED) ==================== */
-.semester{display:none;margin-top:15px;}
-.card{background:white;color:black;padding:12px;margin:10px 0;border-radius:12px;}
-.link{cursor:pointer;margin:5px;display:inline-block;}
-.resource-box{display:none;margin-top:8px;}
-.resource-item{display:flex;justify-content:space-between;background:#f4f6fb;margin:5px 0;padding:6px;border-radius:6px;}
-.btn{background:#2a5298;color:white;border:none;padding:4px 8px;border-radius:5px;}
+/* ================= CONTAINER ================= */
+.container{width:92%;margin:auto;}
 
-.fa-book{color:#ff9800;}
-.fa-note-sticky{color:#4caf50;}
-.fa-folder{color:#9c27b0;}
-.fa-file-lines{color:#e91e63;}
-.fa-graduation-cap{color:#2196f3;}
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  padding:5px;
+}
+
+.navbar button{
+  background: rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.2);
+  color:#fff;
+  margin:6px 10px;
+  cursor:pointer;
+  padding:8px 18px;
+  border-radius:30px;
+  transition:0.3s;
+  font-size:14px;
+}
+
+.navbar button:hover{
+  background: linear-gradient(45deg,#00f2ff,#ff00c8);
+  box-shadow:0 0 15px #00f2ff, 0 0 25px #ff00c8;
+  transform:scale(1.1);
+}
+
+/* ================= SEMESTER ================= */
+.semester{
+  display:none;
+  margin-top:20px;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= CARD ================= */
+.card{
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border:1px solid rgba(255,255,255,0.2);
+  padding:15px;
+  margin:12px 0;
+  border-radius:15px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px) scale(1.01);
+  box-shadow:0 0 20px rgba(0,255,255,0.3);
+}
+
+/* ================= LINKS ================= */
+.link{
+  cursor:pointer;
+  margin:6px;
+  display:inline-block;
+  padding:5px 10px;
+  border-radius:20px;
+  background: rgba(255,255,255,0.1);
+  transition:0.3s;
+}
+
+.link:hover{
+  background: linear-gradient(45deg,#00f2ff,#ff00c8);
+  box-shadow:0 0 10px #00f2ff;
+}
+
+/* ================= RESOURCE ================= */
+.resource-box{
+  display:none;
+  margin-top:10px;
+}
+
+.resource-item{
+  display:flex;
+  justify-content:space-between;
+  background: rgba(255,255,255,0.1);
+  margin:6px 0;
+  padding:8px;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+.resource-item:hover{
+  background: rgba(0,255,255,0.2);
+}
+
+/* ================= BUTTON ================= */
+.btn{
+  background: linear-gradient(45deg,#00f2ff,#ff00c8);
+  border:none;
+  color:white;
+  padding:5px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.btn:hover{
+  box-shadow:0 0 10px #00f2ff;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:15px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  margin-top:20px;
+}
+
 </style>
+
 <script>
 function showSemester(id){
  document.querySelectorAll('.semester').forEach(x=>x.style.display='none');
  document.getElementById(id).style.display='block';
 }
+
 function toggleBox(id){
  let box=document.getElementById(id);
  box.style.display = box.style.display==='block'?'none':'block';
 }
 
-// MAIN FUNCTION (JUST ADD LINKS HERE ONLY)
 function createSubject(name,links,id){
 return `
 <div class="card">
@@ -86,7 +197,9 @@ return `
 </script>
 </head>
 <body>
-<h1>🎓 Study Sphere </h1>
+  <!-- AI PARTICLES BACKGROUND -->
+<canvas id="bgCanvas"></canvas>
+<h1>🎓 Study Sphere</h1>
 
 <!-- ==================== NAVBAR WITH HOVER EFFECT ==================== -->
 <div class="navbar">
@@ -145,7 +258,7 @@ createSubject('Statistics',{book:'#',notes:'#',a1:'#',a2:'#',mid:'https://drive.
 createSubject('AI',{book:'#',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1TZqin-cbJVR10n-xya48_trUF64jXR1-/view?usp=drive_link',final:'https://drive.google.com/file/d/1j11KPXB_HWp3Hg1PY2huanR9OlvZzKAN/view?usp=drive_link'},16);
 </script>
 </div>
-  <!-- SEM 4 -->
+<!-- SEM 4 -->
 <div class="semester" id="sem4"> 
 <h2>Semester 4</h2>
 <div id="sem4data"></div>
@@ -162,27 +275,85 @@ createSubject('Computer',{book:'#',notes:'#',a1:'#',a2:'#',mid:'#',final:'#'},22
 
 
 <!-- SEM 5-8 AUTO NAMES -->
+
 <script>
 function gen(container,start){
  let html='';
- for(let i=1;i<=5;i++){
+ for(let i=1;i<=8;i++){
    html+=createSubject('Book '+i,{book:'#',notes:'#',a1:'#',a2:'#',mid:'#',final:'#'},start+i);
  }
  document.getElementById(container).innerHTML=html;
 }
 </script>
-
+<!--div class="semester" id="sem4"><h2>Semester 4</h2><div id="s4"></div><script>gen('s4',20)</script></div-->
 <div class="semester" id="sem5"><h2>Semester 5</h2><div id="s5"></div><script>gen('s5',30)</script></div>
 <div class="semester" id="sem6"><h2>Semester 6</h2><div id="s6"></div><script>gen('s6',40)</script></div>
 <div class="semester" id="sem7"><h2>Semester 7</h2><div id="s7"></div><script>gen('s7',50)</script></div>
 <div class="semester" id="sem8"><h2>Semester 8</h2><div id="s8"></div><script>gen('s8',60)</script></div>
 </div>
 
-<footer style="text-align:center;padding:15px;background:#0d47a1;margin-top:20px;">
+<footer style="text-align:center;padding:15px;background:#3c766c2b;margin-top:20px;">
 <b>Contact: danish.dogar349@gmail.com</b><br><br>
 <a href="mailto:danish.dogar349@gmail.com">
 <button class="btn"><i class="fa fa-envelope"></i> Email Me</button>
 </a>
 </footer>
+<!-- PARTICLE SCRIPT -->
+<script>
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+  particles.push({
+    x: Math.random()*canvas.width,
+    y: Math.random()*canvas.height,
+    vx: (Math.random()-0.5),
+    vy: (Math.random()-0.5),
+    size: Math.random()*2
+  });
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  particles.forEach(p=>{
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if(p.x<0 || p.x>canvas.width) p.vx *= -1;
+    if(p.y<0 || p.y>canvas.height) p.vy *= -1;
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    ctx.fillStyle="#00f2ff";
+    ctx.fill();
+  });
+
+  for(let i=0;i<particles.length;i++){
+    for(let j=i;j<particles.length;j++){
+      let dx = particles[i].x - particles[j].x;
+      let dy = particles[i].y - particles[j].y;
+      let dist = Math.sqrt(dx*dx + dy*dy);
+
+      if(dist < 120){
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x,particles[i].y);
+        ctx.lineTo(particles[j].x,particles[j].y);
+        ctx.strokeStyle="rgba(0,242,255,0.1)";
+        ctx.stroke();
+      }
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 </body>
 </html>
