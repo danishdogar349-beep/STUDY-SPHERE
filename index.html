@@ -183,14 +183,36 @@ return `
 <span class="link" onclick="toggleBox('m${id}')"><i class="fa fa-file-lines"></i> Mid</span>
 <span class="link" onclick="toggleBox('f${id}')"><i class="fa fa-graduation-cap"></i> Final</span>
 
-<div id="b${id}" class="resource-box"><div class="resource-item">Book <a href="${links.book}" target="_blank"><button class="btn">Download</button></a></div></div>
-<div id="n${id}" class="resource-box"><div class="resource-item">Notes <a href="${links.notes}" target="_blank"><button class="btn">Download</button></a></div></div>
-<div id="a${id}" class="resource-box">
-<div class="resource-item">Assignment 1 <a href="${links.a1}" target="_blank"><button class="btn">Download</button></a></div>
-<div class="resource-item">Assignment 2 <a href="${links.a2}" target="_blank"><button class="btn">Download</button></a></div>
+<div id="b${id}" class="resource-box"><div class="resource-item">Book <a href="${links.book}" target="_blank"><button class="btn">Download</button>
+</a>
+<button class="btn" onclick="window.open('${links.book}','_blank')">Preview</button>
 </div>
-<div id="m${id}" class="resource-box"><div class="resource-item">Mid_past_paper <a href="${links.mid}" target="_blank"><button class="btn">Download</button></a></div></div>
-<div id="f${id}" class="resource-box"><div class="resource-item">Final_past_paper <a href="${links.final}" target="_blank"><button class="btn">Download</button></a></div></div>
+</div>
+<div id="n${id}" class="resource-box"><div class="resource-item">Notes <a href="${links.notes}" target="_blank"><button class="btn">Download</button>
+  </a>
+  <button class="btn" onclick="window.open('${links.notes}','_blank')">Preview</button>
+  </div>
+  </div>
+<div id="a${id}" class="resource-box">
+<div class="resource-item">Assignment 1 <a href="${links.a1}" target="_blank"><button class="btn">Download</button>
+  </a>
+  <button class="btn" onclick="window.open('${links.a1}','_blank')">Preview</button>
+  </div>
+<div class="resource-item">Assignment 2 <a href="${links.a2}" target="_blank"><button class="btn">Download</button>
+  </a>
+  <button class="btn" onclick="window.open('${links.a2}','_blank')">Preview</button>
+  </div>
+</div>
+<div id="m${id}" class="resource-box"><div class="resource-item">Mid_past_paper <a href="${links.mid}" target="_blank"><button class="btn">Download</button>
+  </a>
+  <button class="btn" onclick="window.open('${links.mid}','_blank')">Preview</button>
+  </div>
+  </div>
+<div id="f${id}" class="resource-box"><div class="resource-item">Final_past_paper <a href="${links.final}" target="_blank"><button class="btn">Download</button>
+  </a>
+  <button class="btn" onclick="window.open('${links.final}','_blank')">Preview</button>
+  </div>
+  </div>
 
 </div>`;
 }
@@ -223,10 +245,10 @@ document.getElementById('sem1data').innerHTML =
 createSubject('Computer Programming',{
 book:'https://drive.google.com/file/d/1e9oUPVuCSQefXvvoeXrCWfBlpC9f3TBN/view?usp=drive_link',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1Y-1MLqn7Hi_Cm_S9k_9NYuHpWNJh6lEX/view?usp=drive_link',final:'https://drive.google.com/file/d/129UYbgMhCf39m9eZg5a8j1CnEwspQZno/view?usp=drive_link'
 },1)+
-createSubject('Discrete Math',{book:'https://raw.githubusercontent.com/danishdogar349-beep/notes--portal/fa5541466887a5b594327c6c5004c39c37dbd0d6/Kenneth%20Rosen%20-%20Discrete%20Mathematics%20and%20Its%20Applications%20-%208th%20edition.pdf',notes:'https://drive.google.com/file/d/1H3ENdxQ93aEhu8ICVeiorAtwjeZBOemf/view?usp=sharing',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1UvB_E1MahchyuFKHgXQTGzIjOQ0Lef26/view?usp=drive_link',final:'https://drive.google.com/file/d/16e8Yah4xWP787bKtK8jmY0mG0QTmG3a9/view?usp=drive_link'},2)+
+createSubject('Discrete Math',{book:'https://drive.google.com/file/d/1P_T3q2nj3lSgLTgu5RU21gMcZYkuSv3i/view?usp=drive_link',notes:'https://drive.google.com/file/d/1H3ENdxQ93aEhu8ICVeiorAtwjeZBOemf/view?usp=sharing',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1UvB_E1MahchyuFKHgXQTGzIjOQ0Lef26/view?usp=drive_link',final:'https://drive.google.com/file/d/16e8Yah4xWP787bKtK8jmY0mG0QTmG3a9/view?usp=drive_link'},2)+
 createSubject('Calculus 1',{book:'https://drive.google.com/file/d/1SdDkBC2H6Thnqts7DnkbelEQSZ7F8_97/view?usp=drive_link',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1r8BPYYBMS6deYg7vnfQNW5AMsqyN9oow/view?usp=drive_link',final:'https://drive.google.com/file/d/1GS38i3O6ZJw7NYHQYShIp8PS_AAz5U7Y/view?usp=drive_link'},3)+
 createSubject('ICT',{book:'#',notes:'https://drive.google.com/drive/folders/1Y6Gk7YQtWBlg608GOS6FRdP4C2D7Uh_M?usp=drive_link',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1NFFqilUDwuZgOVN1WcXFPwupCPi5crLf/view?usp=drive_link',final:'https://drive.google.com/file/d/1hbsbvY6FUXA4VnlkbU2C-u5Zvivrd36q/view?usp=drive_link'},4)+
-createSubject('English',{book:'https://raw.githubusercontent.com/danishdogar349-beep/notes--portal/0c0f6add626d047cc60f925a6e168a252c52a814/5451.pdf',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/136wDrB6wPxaIOzU6EPh_WzkGtvoafbpT/view?usp=drive_link',final:'https://drive.google.com/file/d/1rFba1yH3wZVhXLfLnwHJIDFZdF1JLplw/view?usp=drive_link'},5);
+createSubject('English',{book:'https://drive.google.com/file/d/1umf-aZ3z2A4GQJdRKXt1jxXEI6tX_Bp4/view?usp=drive_link',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/136wDrB6wPxaIOzU6EPh_WzkGtvoafbpT/view?usp=drive_link',final:'https://drive.google.com/file/d/1rFba1yH3wZVhXLfLnwHJIDFZdF1JLplw/view?usp=drive_link'},5);
 </script>
 </div>
 
@@ -237,7 +259,7 @@ createSubject('English',{book:'https://raw.githubusercontent.com/danishdogar349-
 <script>
 document.getElementById('sem2data').innerHTML =
 createSubject('DLD',{book:'#',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/12D6_BxIniGzA_PLf-SRbTL90_fwfVjv_/view?usp=drive_link',final:'https://drive.google.com/file/d/1x8veLaINsUDPsJgpIfZvwDwHbCHHxUPZ/view?usp=drive_link'},6)+
-createSubject('Linear Algebra',{book:'https://raw.githubusercontent.com/danishdogar349-beep/notes--portal/526e847c7a8fa9f10b57fa41d41009c05edc17fa/037-Elementary-Linear-Algebra-Applications-Version-Howard-Anton-Chris-Rorres-Edisi-1-2013.pdf',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/17Z-PwkHIRMBj4U7YD432eJCYbZD0iSNJ/view?usp=drive_link',final:'https://drive.google.com/file/d/1b0u7EwFN07OkWQhA5XtdnaHuie2c7VhJ/view?usp=drive_link'},7)+
+createSubject('Linear Algebra',{book:'https://drive.google.com/file/d/1tkVFPpJiIYtmqAPgOGCyiGKtZcu8oWgc/view?usp=drive_link',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/17Z-PwkHIRMBj4U7YD432eJCYbZD0iSNJ/view?usp=drive_link',final:'https://drive.google.com/file/d/1b0u7EwFN07OkWQhA5XtdnaHuie2c7VhJ/view?usp=drive_link'},7)+
 createSubject('OOP',{book:'#',notes:'https://drive.google.com/drive/folders/17Nf64dzsp8zA5CY_HRWRe42Vwcp2Ypk9?usp=drive_link',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1WzC1ZMlyaBOkdDuyhKoJ1Fa5NhubZ47E/view?usp=drive_link',final:'https://drive.google.com/file/d/1P-9irG6XC10qsUFSCMf5uvAGZaVfsnXW/view?usp=drive_link'},8)+
 createSubject('DBMS',{book:'#',notes:'https://drive.google.com/drive/folders/1U_uCSnv5rmuME8to-X6u9sO_ibG6iNUV?usp=drive_link',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1QxqPnN-fcUFwZp6oyQhW6-Jdt-POTEEv/view?usp=drive_link',final:'https://drive.google.com/file/d/11_2i3ZfW94Yo7-pU6GEkNmNgpuxVRygI/view?usp=drive_link'},9)+
 createSubject('Calculus 2',{book:'https://drive.google.com/file/d/1iIPT6O9v3m1vPMmwqgKr-XevVA9tpwZ1/view?usp=drive_link',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1ETT96d1BuzRa2mqJeMyOrDiMjX41-KWH/view?usp=drive_link',final:'https://drive.google.com/file/d/1181T7f0VQmVVXQcjS48GehXCZUe97Dwu/view?usp=drive_link'},10);
@@ -253,7 +275,7 @@ document.getElementById('sem3data').innerHTML =
 createSubject('Data Structures',{book:'#',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1BUTeSKFuIcC6TjnshG0hI8uRIV4053re/view?usp=drive_link',final:'https://drive.google.com/file/d/1glNR3ZU1ZmGW0b7vJkJbKJdwphFdk3tb/view?usp=drive_link'},11)+
 createSubject('Information Security',{book:'https://drive.google.com/file/d/1iNPVBzwTersOjVIKGm40lOEKufbrEyVY/view?usp=drive_link',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1P6pBnQ3PnRa8b3AzIGDoE4bY3BnRJf99/view?usp=drive_link',final:'https://drive.google.com/file/d/1l2fKqWWmel6CdHa-yP9V1b4JW3eS5SSF/view?usp=drive_link'},12)+
 createSubject('Computer Networks',{book:'#',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1TZqin-cbJVR10n-xya48_trUF64jXR1-/view?usp=drive_link',final:'https://drive.google.com/file/d/1wlOdZ6phKWHyrxbQ8sBLWe30kOY0VCLa/view?usp=drive_link'},13)+
-createSubject('Software Engineering',{book:'https://drive.google.com/file/d/1_U9_X_5KwGAeLtl6NzMs7kX_4imcTpqg/view?usp=drive_link',notes:'https://raw.githubusercontent.com/danishdogar349-beep/notes--portal/main/Short%20Notes.pdf',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1wa-hEAlzZif44CB6PXpdJG9wOV2EnvL5/view?usp=drive_link',final:'https://drive.google.com/file/d/1if1fguwm3hex1G8-kv1Q3CQzq-fi_YH5/view?usp=drive_link'},14)+
+createSubject('Software Engineering',{book:'https://drive.google.com/file/d/1_U9_X_5KwGAeLtl6NzMs7kX_4imcTpqg/view?usp=drive_link',notes:'https://drive.google.com/file/d/1yhs0yjb4AcPta4mBeKa3hgliHxNmATnQ/view?usp=drive_link',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1wa-hEAlzZif44CB6PXpdJG9wOV2EnvL5/view?usp=drive_link',final:'https://drive.google.com/file/d/1if1fguwm3hex1G8-kv1Q3CQzq-fi_YH5/view?usp=drive_link'},14)+
 createSubject('Statistics',{book:'#',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1BcohjL6sahrp01byDPA5OU_eYtRABKj_/view?usp=drive_link',final:'https://drive.google.com/file/d/1d-E7M-Dkv4bPyVg5wW6O1MIlUL3GkoKK/view?usp=drive_link'},15)+
 createSubject('AI',{book:'#',notes:'#',a1:'#',a2:'#',mid:'https://drive.google.com/file/d/1TZqin-cbJVR10n-xya48_trUF64jXR1-/view?usp=drive_link',final:'https://drive.google.com/file/d/1j11KPXB_HWp3Hg1PY2huanR9OlvZzKAN/view?usp=drive_link'},16);
 </script>
